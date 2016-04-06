@@ -68,6 +68,20 @@ $catalog[105] = [
   "category" => "music"
 ];
 
+$catalog[105] = [
+  "title" => "The Big Short",
+  "Director" => "Adam McKay",
+  "Year" => 2015,
+  "Cast" => [
+    "Christian Bale",
+    "Steve Carrell",
+    "Ryan Gosling",
+    "Brad Pitt",
+  ],
+  "img" => "http://cdn3-www.comingsoon.net/assets/uploads/gallery/the-big-short/tbs_1-sht_teaser.jpg",
+  "category" => "movies"
+];
+
 
 
 
