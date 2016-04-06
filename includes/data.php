@@ -52,6 +52,17 @@ $catalog[104] = [
   "img" => "http://a.dilcdn.com/bl/wp-content/uploads/sites/6/2015/10/star-wars-force-awakens-official-poster.jpg"
 ];
 
+$catalog[105] = [
+  "title" => "Fight Club",
+  "Director" => "David Fincher",
+  "Year" => 1999,
+  "Cast" => [
+    "Brad Pit",
+    "Edward Norton, Jr.",
+  ],
+  "img" => "http://img.goldposter.com/2015/04/Fight-Club_poster_goldposter_com_21.jpg"
+];
+
 
 
 
