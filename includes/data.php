@@ -9,7 +9,8 @@ $catalog[101] = [
     "Mark Ruffalo",
     "Michael Keaton",
   ],
-  "img" => "http://wp.production.patheos.com/blogs/pursuedbytruth/files/2015/11/Oscarometro2016Spotlight.jpg"
+  "img" => "http://wp.production.patheos.com/blogs/pursuedbytruth/files/2015/11/Oscarometro2016Spotlight.jpg",
+  "category" => "Movies"
 ];
 
 
@@ -23,7 +24,8 @@ $catalog[102] = [
     "Minnie Driver",
     "Robin Williams"
   ],
-  "img" => "http://cdn.miramax.com/media/assets/726_GoodWillHunting_Catalog_Poster-BB_v2_Approved.png"
+  "img" => "http://cdn.miramax.com/media/assets/726_GoodWillHunting_Catalog_Poster-BB_v2_Approved.png",
+  "category" => "Movies"
 ];
 
 $catalog[103] = [
@@ -36,7 +38,8 @@ $catalog[103] = [
     "Minnie Driver",
     "Robin Williams"
   ],
-  "img" => "https://resizing.flixster.com/bBiINc0J64btBDSR5_HGxL5iE1o=/800x1184/v1.bTsxMTQyMDkxNDtqOzE3MDExOzIwNDg7MTAwMDsxNDgw"
+  "img" => "https://resizing.flixster.com/bBiINc0J64btBDSR5_HGxL5iE1o=/800x1184/v1.bTsxMTQyMDkxNDtqOzE3MDExOzIwNDg7MTAwMDsxNDgw",
+  "category" => "books"
 ];
 
 $catalog[104] = [
@@ -49,7 +52,8 @@ $catalog[104] = [
     "Minnie Driver",
     "Robin Williams"
   ],
-  "img" => "http://a.dilcdn.com/bl/wp-content/uploads/sites/6/2015/10/star-wars-force-awakens-official-poster.jpg"
+  "img" => "http://a.dilcdn.com/bl/wp-content/uploads/sites/6/2015/10/star-wars-force-awakens-official-poster.jpg",
+  "category" => "books"
 ];
 
 $catalog[105] = [
@@ -60,7 +64,8 @@ $catalog[105] = [
     "Brad Pit",
     "Edward Norton, Jr.",
   ],
-  "img" => "http://img.goldposter.com/2015/04/Fight-Club_poster_goldposter_com_21.jpg"
+  "img" => "http://img.goldposter.com/2015/04/Fight-Club_poster_goldposter_com_21.jpg",
+  "category" => "music"
 ];
 
 
