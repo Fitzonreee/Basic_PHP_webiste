@@ -19,8 +19,6 @@ if (isset($_GET["cat"])) {
   }
 }
 
-
-
 include("includes/header.php"); ?>
 
 <div class="section catalog page">
