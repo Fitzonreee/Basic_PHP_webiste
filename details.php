@@ -26,5 +26,30 @@ include("includes/header.php"); ?>
         <img src="<?php echo $item["img"] ?>" alt="<?php echo $item["title"] ?>" />
       </span>
     </div>
+    <div class="media-details">
+      <h1><?php echo $item["title"]; ?></h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <td><?php echo $item["category"]; ?></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Year</th>
+            <td><?php echo $item["Year"]; ?></td>
+          </tr>
+          <tr>
+            <th>Director</th>
+            <td><?php echo $item["Director"]; ?></td>
+          </tr>
+          <tr>
+            <th>Cast</th>
+            <td><?php echo implode(", ",$item["Cast"]); ?></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
