@@ -17,17 +17,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   require("includes/php_mailer/class.phpmailer.php");
 
-  // Redirect
-  header("location:suggest.php?status=thanks");
+  $mail = new PHPMailer;
+
+  if (!$mail->ValidateAddress($email)) {
+    echo "Invalid Email Address";
+    exit;
+  }
 
   // header redirect must come before this
-  echo "<pre>";
   $email_body = "";
-  $email_body .= "Name: " . $name . "<br>";
-  $email_body .= "Email: " . $email . "<br>";
+  $email_body .= "Name: " . $name . "\n";
+  $email_body .= "Email: " . $email . "\n";
   $email_body .= "Details: " . $details;
-  echo $email_body;
-  echo "</pre>";
+
+  // PHP Mailer shizzz
+  $mail->setFrom($email, $name);
+  $mail->addAddress('kevin.fitzhenry@createthenext.com', 'Kevin Fitzhenry'); // Add a recipient
+
+  $mail->isHTML(false); // Set email format to HTML
+
+  $mail->Subject = 'New Movie suggestion from ' . $name;
+  $mail->Body    = $email_body;
+
+  if(!$mail->send()) {
+      echo 'Message could not be sent.';
+      echo 'Mailer Error: ' . $mail->ErrorInfo;
+      exit;
+  }
+
+  // Redirect
+  header("location:suggest.php?status=thanks");
 }
 
 $pageTitle = "Suggest a Media Item";
