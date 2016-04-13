@@ -1,11 +1,34 @@
 <?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = $_POST["name"];
+  $email = $_POST["email"];
+  $details = $_POST["details"];
+
+  // Redirect
+  header("location:suggest.php?status=thanks");
+
+  // header redirect must come before this
+  echo "<pre>";
+  $email_body = "";
+  $email_body .= "Name: " . $name . "<br>";
+  $email_body .= "Email: " . $email . "<br>";
+  $email_body .= "Details: " . $details;
+  echo $email_body;
+  echo "</pre>";
+}
+
 $pageTitle = "Suggest a Media Item";
 $section = "suggest";
-include("includes/header.php"); ?>
+include("includes/header.php");
+?>
 
 <div class="section page">
   <div class="wrapper">
     <h1>Suggest a Media Item</h1>
+    <?php if (isset($_GET["status"]) && $_GET["status"] == "thanks") {
+      echo " <p style='text-align:center;''>Thanks for the email, I'll check out your suggestion.</p>";
+    } else { ?>
     <p>Complete the form to send me an email with a suggestion.</p>
     <form method="post" action="suggest.php">
       <div class="form-group">
@@ -24,6 +47,7 @@ include("includes/header.php"); ?>
         <input type="submit" value="Submit Suggestion">
       </div>
     </form>
+    <?php } ?>
   </div>
 </div>
 
