@@ -15,6 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit;
   }
 
+  require("includes/php_mailer/class.phpmailer.php");
+
   // Redirect
   header("location:suggest.php?status=thanks");
 
