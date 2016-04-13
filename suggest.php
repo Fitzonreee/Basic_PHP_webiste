@@ -7,7 +7,7 @@ include("includes/header.php"); ?>
   <div class="wrapper">
     <h1>Suggest a Media Item</h1>
     <p>Complete the form to send me an email with a suggestion.</p>
-    <form method="post" action="process.php">
+    <form method="post" action="suggest.php">
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" name="name" placeholder="First and Last name">
