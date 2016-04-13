@@ -1,9 +1,19 @@
 <?php
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = $_POST["name"];
-  $email = $_POST["email"];
-  $details = $_POST["details"];
+  $name = trim(filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING));
+  $email = trim(filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL));
+  $details = trim(filter_input(INPUT_POST, "details", FILTER_SANITIZE_SPECIAL_CHARS));
+
+  //Form validations
+  if ($name == "" OR $email == "" OR $details == "") {
+    echo "Please fill in the required fields: Name, Email and Details";
+    exit;
+  }
+
+  if ($_POST["address"] != "") {
+    echo "Bad form input";
+    exit;
+  }
 
   // Redirect
   header("location:suggest.php?status=thanks");
@@ -45,6 +55,12 @@ include("includes/header.php");
       </div>
       <div class="form-group">
         <input type="submit" value="Submit Suggestion">
+      </div>
+      <!-- honeypot, bitches! -->
+      <div class="form-group" style="display:none;">
+        <label for="address">Address</label>
+        <input type="address" name="address" id="address" placeholder="Valid address">
+        <p>Please leave this field blank</p>
       </div>
     </form>
     <?php } ?>
