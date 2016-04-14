@@ -71,28 +71,30 @@ include("includes/header.php");
     <form method="post" action="suggest.php">
       <div class="form-group">
         <label for="name">Name<span class="required">Required</span></label>
-        <input type="text" name="name" placeholder="First and Last name">
+        <input type="text" name="name" placeholder="First and Last name" value="<?php if(isset($name)) {echo $name;}  ?>">
       </div>
       <div class="form-group">
         <label for="email">Email<span class="required">Required</span></label>
-        <input type="email" name="email" id="email" placeholder="Valid email address">
+        <input type="email" name="email" id="email" placeholder="Valid email address" value="<?php if(isset($email)) {echo $email;}  ?>">
       </div>
       <div class="form-group">
         <label for="category">Category<span class="required">Required</span></label>
         <select name="category">
           <option value="" selected disabled>Select One</option>
-          <option value="">Book</option>
-          <option value="">Movie</option>
-          <option value="">Music</option>
+          <option value="" <?php if (isset($category) && $category == "Book") {echo " selected";} ?>>Book</option>
+          <option value="" <?php if (isset($category) && $category == "Movie") {echo " selected";} ?>>Movie</option>
+          <option value="" <?php if (isset($category) && $category == "Music") {echo " selected";} ?>>Music</option>
         </select>
       </div>
       <div class="form-group">
         <label for="title">Title<span class="required">Required</span></label>
-        <input type="text" name="title" id="title" placeholder="Add the Movie title">
+        <input type="text" name="title" id="title" placeholder="Add the Movie title" value="<?php if(isset($title)) {echo $title;}  ?>">
       </div>
       <div class="form-group">
         <label for="details">Suggestion Details</label>
-        <textarea name="details" id="details" rows="8" cols="40"></textarea>
+        <textarea name="details" id="details" rows="8" cols="40">
+          <?php if(isset($details)) {echo $details;}  ?>
+        </textarea>
       </div>
       <div class="form-group">
         <input type="submit" value="Submit Suggestion">
