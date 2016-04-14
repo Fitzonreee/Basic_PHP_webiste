@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $error_message = "Please fill in the required fields: Name, Email, Title, Category and Details";
   }
 
-  if ($_POST["address"] != "") {
+  if (!isset($error_message) && $_POST["address"] != "") {
     $error_message = "Bad form input";
   }
 
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   $mail = new PHPMailer;
 
-  if (!$mail->ValidateAddress($email)) {
+  if (!isset($error_message) && !$mail->ValidateAddress($email)) {
     $error_message = "Invalid Email Address";
   }
 
@@ -62,8 +62,12 @@ include("includes/header.php");
     <h1>Suggest a Media Item</h1>
     <?php if (isset($_GET["status"]) && $_GET["status"] == "thanks") {
       echo " <p style='text-align:center;''>Thanks for the email, I'll check out your suggestion.</p>";
-    } else { ?>
-    <p>Complete the form to send me an email with a suggestion.</p>
+    } else {
+      if (isset($error_message)) {
+        echo "<p class='message'>" . $error_message . "</p>";
+    } else {
+        echo "<p>Complete the form to send me an email with a suggestion.</p>";
+    } ?>
     <form method="post" action="suggest.php">
       <div class="form-group">
         <label for="name">Name<span class="required">Required</span></label>
