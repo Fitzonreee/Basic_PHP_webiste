@@ -93,7 +93,7 @@ include("includes/header.php");
       <div class="form-group">
         <label for="details">Suggestion Details</label>
         <textarea name="details" id="details" rows="8" cols="40">
-          <?php if(isset($details)) {echo $details;}  ?>
+          <?php if(isset($details)) {echo htmlspecialchars($_POST["details"]);}  ?>
         </textarea>
       </div>
       <div class="form-group">
