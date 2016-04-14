@@ -8,13 +8,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   //Form validations
   if ($name == "" OR $email == "" OR $details == "" OR $category="" OR $title="") {
-    echo "Please fill in the required fields: Name, Email, Title, Category and Details";
-    exit;
+    $error_message = "Please fill in the required fields: Name, Email, Title, Category and Details";
   }
 
   if ($_POST["address"] != "") {
-    echo "Bad form input";
-    exit;
+    $error_message = "Bad form input";
   }
 
   require("includes/php_mailer/class.phpmailer.php");
@@ -22,36 +20,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $mail = new PHPMailer;
 
   if (!$mail->ValidateAddress($email)) {
-    echo "Invalid Email Address";
-    exit;
+    $error_message = "Invalid Email Address";
   }
 
-  // header redirect must come before this - style this shit and see if it works!
-  $email_body = "";
-  $email_body .= "Name: " . $name . "\n";
-  $email_body .= "Email: " . $email . "\n";
-  $email_body .= "Category: " . $category . "\n";
-  $email_body .= "Title: " . $title . "\n";
-  $email_body .= "Details: " . $details;
+  if (!isset($error_message)) {
+    // header redirect must come before this - style this shit and see if it works!
+    $email_body = "";
+    $email_body .= "Name: " . $name . "\n";
+    $email_body .= "Email: " . $email . "\n";
+    $email_body .= "Category: " . $category . "\n";
+    $email_body .= "Title: " . $title . "\n";
+    $email_body .= "Details: " . $details;
 
-  // You should absolutely use different email server in production environment ex. Postmark, GmailSMPT
-  // PHP Mailer shizzz
-  $mail->setFrom($email, $name);
-  $mail->addAddress('kevin.fitzhenry@createthenext.com', 'Kevin Fitzhenry'); // Add a recipient
+    // You should absolutely use different email server in production environment ex. Postmark, GmailSMPT
+    // PHP Mailer shizzz
+    $mail->setFrom($email, $name);
+    $mail->addAddress('kevin.fitzhenry@createthenext.com', 'Kevin Fitzhenry'); // Add a recipient
 
-  $mail->isHTML(false); // Set email format to HTML - change to true and style!
+    $mail->isHTML(false); // Set email format to HTML - change to true and style!
 
-  $mail->Subject = 'New Movie suggestion from ' . $name;
-  $mail->Body    = $email_body;
+    $mail->Subject = 'New Movie suggestion from ' . $name;
+    $mail->Body    = $email_body;
 
-  if(!$mail->send()) {
-      echo 'Message could not be sent.';
-      echo 'Mailer Error: ' . $mail->ErrorInfo;
+    if($mail->send()) {
+      // Redirect
+      header("location:suggest.php?status=thanks");
       exit;
+    }
+    $error_message = 'Message could not be sent.';
+    $error_message .= 'Mailer Error: ' . $mail->ErrorInfo;
   }
-
-  // Redirect
-  header("location:suggest.php?status=thanks");
 }
 
 $pageTitle = "Suggest a Media Item";
