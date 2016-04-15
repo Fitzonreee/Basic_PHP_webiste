@@ -1,2 +1,30 @@
 body {
   background-color: #213d7c; }
+
+.header {
+  background-color: yellow;
+  height: 100%; }
+
+#sidebar {
+  padding-left: 0; }
+
+.branding-title {
+  margin: 0; }
+
+.items {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row-wrap;
+      -ms-flex-flow: row-wrap;
+          flex-flow: row-wrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  padding: 0;
+  margin: 0; }
+  .items li {
+    margin: auto; }
+    .items li img {
+      width: 190px; }

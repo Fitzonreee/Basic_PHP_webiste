@@ -2,7 +2,6 @@
 include("includes/data.php");
 include("includes/functions.php");
 
-
 $pageTitle = "Full Catalog";
 $section = null;
 

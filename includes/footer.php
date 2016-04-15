@@ -1,15 +1,6 @@
-</div> <!-- end of content -->
-
-<div class="footer">
-  <div class="wrapper">
-    <ul>
-      <li><a href="http://twitter.com/treehouse">Twitter</a></li>
-      <li><a href="https://www.facebook.com/TeamTreehouse">Facebook</a></li>
-    </ul>
-    <p>&copy;<?php echo date('Y'); ?> Personal Media Library</p>
-  </div>
-</div>
-
+  </div> <!-- end of content -->
+  </div> <!-- / end of master row -->
+  </div> <!-- / end of container-fluid -->
   <!-- Bootstrap -->
   <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
