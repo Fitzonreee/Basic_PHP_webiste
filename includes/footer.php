@@ -1,5 +1,6 @@
-  </div> <!-- end of content -->
-  </div> <!-- / end of master row -->
+      </div> <!-- end of content -->
+      </div> <!-- end of coll-11 -->
+    </div> <!-- / end of master row -->
   </div> <!-- / end of container-fluid -->
   <!-- Bootstrap -->
   <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>

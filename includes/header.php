@@ -10,31 +10,42 @@
 <body>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-sm-12 col-md-2" id="sidebar">
+			<div class="col-sm-1 col-md-1" id="sidebar">
 				<div class="header">
 					<div class="wrapper">
-						<h1 class="branding-title">
-							<a href="./">
-								<i class="fa fa-film" aria-hidden="true"></i>
-							</a>
-						</h1>
+						<a href="./">
+							<h3 class="branding-title">
+								<i class="fa fa-home" aria-hidden="true"></i>
+							</h3>
+						</a>
 						<ul class="nav">
-			        <li class="books<?php if($section == "books") {echo " on";} ?>"><a href="catalog.php?cat=books">Books</a></li>
-			        <li class="movies <?php if($section == "movies") {echo " on";} ?>"><a href="catalog.php?cat=movies">Movies</a></li>
-			        <li class="music <?php if($section == "music") {echo " on";} ?>"><a href="catalog.php?cat=music">Music</a></li>
-			        <li class="suggest <?php if($section == "suggest") {echo " on";} ?>"><a href="suggest.php">Suggest</a></li>
+			        <li class="books<?php if($section == "books") {echo " on";} ?>">
+								<!-- favorites -->
+								<a href="catalog.php?cat=books">
+									<h3><i class="fa fa-star-o" aria-hidden="true"></i></h3>
+								</a>
+							</li>
+			        <li class="movies <?php if($section == "movies") {echo " on";} ?>">
+								<!-- in theaters -->
+								<a href="catalog.php?cat=movies">
+									<h3><i class="fa fa-ticket" aria-hidden="true"></i></h3>
+								</a>
+							</li>
+			        <li class="music <?php if($section == "music") {echo " on";} ?>">
+								<!-- classics -->
+								<a href="catalog.php?cat=music">
+									<h3><i class="fa fa-film" aria-hidden="true"></i></h3>
+								</a>
+							</li>
+			        <li class="suggest <?php if($section == "suggest") {echo " on";} ?>">
+								<a href="suggest.php">
+									<h3><i class="fa fa-comment" aria-hidden="true"></i></h3>
+								</a>
+							</li>
 			      </ul>
 					</div>
 				</div>
-				<div class="footer">
-				  <div class="wrapper">
-				    <ul>
-				      <li><a href="http://twitter.com/treehouse">Twitter</a></li>
-				      <li><a href="https://www.facebook.com/TeamTreehouse">Facebook</a></li>
-				    </ul>
-				    <p>&copy;<?php echo date('Y'); ?> Cinephile</p>
-				  </div>
-				</div>
-			</div> <!-- end of col-2 (SideBar) -->
+			</div> <!-- end of col-1 (SideBar) -->
 
-	<div id="content">
+			<div class="col-sm-1 col-md-11">
+				<div id="content">

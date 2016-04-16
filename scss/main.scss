@@ -1,28 +1,65 @@
+/*************************
+		Global
+*************************/
 body {
-  background-color: $darkBlue;
+  background-color: $lightGray;
 }
 
+/*************************
+		Nav / Sidebar
+*************************/
 .header {
-  background-color: yellow;
+  background-color: $darkGray;
   height: 100%;
+  width: 80px;
+}
+
+.nav {
+  li {
+    a {
+      width: 100%;
+      display: table;
+      margin: 30px 0;
+      h3 {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+      }
+    }
+  }
 }
 
 #sidebar {
   padding-left: 0;
 }
 
+/*************************
+		main-content
+*************************/
+h1, #headline {
+  font-weight: 100;
+  letter-spacing: 4px;
+  padding-bottom: 20px;
+  margin-right: 60px;
+  border-bottom: 1px solid $darkGray;
+}
 .branding-title {
   margin: 0;
+  padding-top: 30px;
+  text-align: center;
 }
 
 .items {
   display: flex;
   flex-flow: row-wrap;
-  justify-content: space-around;
   padding: 0;
   margin: 0;
   li {
-    margin: auto;
+    margin: 20px;
+    list-style-type: none;
+    &:first-child {
+      margin-left: 0;
+    }
     img {
       width: 190px;
     }

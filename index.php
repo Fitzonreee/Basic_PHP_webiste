@@ -7,8 +7,8 @@ $section = null;
 include("includes/header.php"); ?>
 	<!-- start of content on header.php -->
 	<div class="section catalog random">
+		<h2 id="headline">All Movies</h2>
 		<div class="wrapper">
-			<h2>May we suggest something?</h2>
 			<ul class="items">
 				<?php
 				$random = array_rand($catalog, 4);
