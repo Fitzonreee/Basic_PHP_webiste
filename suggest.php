@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   //Form validations
   if ($name == "" OR $email == "" OR $details == "" OR $category="" OR $title="") {
-    $error_message = "Please fill in the required fields: Name, Email, Title, Category and Details";
+    $error_message = "<div class='alert alert-danger'>Please fill in the required fields: Name, Email, Title, Category and Details</div>";
   }
 
   if (!isset($error_message) && $_POST["address"] != "") {
@@ -71,15 +71,15 @@ include("includes/header.php");
     <form method="post" action="suggest.php">
       <div class="form-group">
         <label for="name">Name<span class="required">Required</span></label>
-        <input type="text" name="name" placeholder="First and Last name" value="<?php if(isset($name)) {echo $name;}  ?>">
+        <input type="text" name="name" placeholder="First and Last name" class="form-control" value="<?php if(isset($name)) {echo $name;}  ?>">
       </div>
       <div class="form-group">
         <label for="email">Email<span class="required">Required</span></label>
-        <input type="email" name="email" id="email" placeholder="Valid email address" value="<?php if(isset($email)) {echo $email;}  ?>">
+        <input type="email" name="email" id="email" placeholder="Valid email address" class="form-control" value="<?php if(isset($email)) {echo $email;}  ?>">
       </div>
       <div class="form-group">
         <label for="category">Category<span class="required">Required</span></label>
-        <select name="category">
+        <select name="category" class="form-control">
           <option value="" selected disabled>Select One</option>
           <option value="" <?php if (isset($category) && $category == "Book") {echo " selected";} ?>>Book</option>
           <option value="" <?php if (isset($category) && $category == "Movie") {echo " selected";} ?>>Movie</option>
@@ -88,16 +88,16 @@ include("includes/header.php");
       </div>
       <div class="form-group">
         <label for="title">Title<span class="required">Required</span></label>
-        <input type="text" name="title" id="title" placeholder="Add the Movie title" value="<?php if(isset($title)) {echo $title;}  ?>">
+        <input type="text" name="title" id="title" placeholder="Add the Movie title" class="form-control" value="<?php if(isset($title)) {echo $title;}  ?>">
       </div>
       <div class="form-group">
         <label for="details">Suggestion Details</label>
-        <textarea name="details" id="details" rows="8" cols="40">
+        <textarea name="details" id="details" rows="8" cols="40" class="form-control">
           <?php if(isset($details)) {echo htmlspecialchars($_POST["details"]);}  ?>
         </textarea>
       </div>
       <div class="form-group">
-        <input type="submit" value="Submit Suggestion">
+        <input type="submit" value="Submit Suggestion" class="btn btn-primary">
       </div>
       <!-- honeypot, bitches! -->
       <div class="form-group" style="display:none;">

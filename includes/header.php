@@ -47,5 +47,5 @@
 				</div>
 			</div> <!-- end of col-1 (SideBar) -->
 
-			<div class="col-sm-1 col-md-11">
+			<div class="col-sm-11 col-md-11">
 				<div id="content">
